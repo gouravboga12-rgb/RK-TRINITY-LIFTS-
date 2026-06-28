@@ -62,7 +62,7 @@ export default function Navbar() {
             <img 
               src={logoImg} 
               alt="RK TRINITY LIFTS Logo" 
-              className="h-14 sm:h-24 md:h-32 max-w-[130px] sm:max-w-[220px] md:max-w-none w-auto object-contain my-[-10px] sm:my-[-20px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
+              className="h-20 sm:h-24 md:h-32 max-w-[190px] sm:max-w-[220px] md:max-w-none w-auto object-contain my-[-16px] sm:my-[-20px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
             />
           </Link>
 
