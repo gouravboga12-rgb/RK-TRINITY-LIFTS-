@@ -83,3 +83,13 @@
 .glow-effect:hover::after {
   opacity: 0.15;
 }
+
+@keyframes bounceShort {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+.animate-bounce-short {
+  animation: bounceShort 2.5s infinite ease-in-out;
+}
+
