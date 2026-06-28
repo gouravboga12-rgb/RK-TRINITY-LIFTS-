@@ -50,10 +50,10 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-gray-100 ${
       scrolled 
-        ? 'bg-primary/95 shadow-lg backdrop-blur-md py-3' 
-        : 'bg-transparent py-5'
+        ? 'bg-white/95 shadow-md backdrop-blur-md py-3' 
+        : 'bg-white shadow-sm py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function Navbar() {
             <img 
               src={logoImg} 
               alt="RK TRINITY LIFTS Logo" 
-              className="h-20 sm:h-24 md:h-32 max-w-[190px] sm:max-w-[220px] md:max-w-none w-auto object-contain my-[-16px] sm:my-[-20px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
+              className="h-28 sm:h-28 md:h-32 max-w-[240px] sm:max-w-[240px] md:max-w-none w-auto object-contain my-[-22px] sm:my-[-22px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
             />
           </Link>
 
@@ -77,7 +77,7 @@ export default function Navbar() {
                   className={`font-medium transition-colors text-sm uppercase tracking-wider relative py-1 ${
                     isActive 
                       ? 'text-accent' 
-                      : 'text-gray-200 hover:text-accent'
+                      : 'text-slateText hover:text-accent'
                   }`}
                 >
                   {link.name}
@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-4">
             <a 
               href="tel:+917799383334" 
-              className="flex items-center text-sm font-semibold text-gray-200 hover:text-accent transition-colors"
+              className="flex items-center text-sm font-semibold text-slateText hover:text-accent transition-colors"
             >
               <Phone className="w-4 h-4 mr-1.5 text-accent" />
               +91 77993 83334
@@ -103,14 +103,14 @@ export default function Navbar() {
               <div className="flex items-center space-x-3">
                 <Link
                   to={getDashboardPath()}
-                  className="flex items-center px-4 py-2 border border-accent/30 bg-accent/10 hover:bg-accent text-white font-semibold text-xs tracking-wider uppercase rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+                  className="flex items-center px-4 py-2 border border-accent bg-accent/10 hover:bg-accent text-primary hover:text-white font-semibold text-xs tracking-wider uppercase rounded-md transition-all duration-300 hover:shadow-[0_0_15px_rgba(245,158,11,0.4)]"
                 >
                   {getRoleIcon()}
                   Dashboard
                 </Link>
                 <button
                   onClick={logout}
-                  className="p-2 border border-red-500/30 hover:border-red-500 bg-red-500/10 hover:bg-red-500 text-white rounded-md transition-colors duration-300"
+                  className="p-2 border border-red-500/30 hover:border-red-500 bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white rounded-md transition-colors duration-300"
                   title="Sign Out"
                 >
                   <LogOut className="w-4 h-4" />
@@ -128,17 +128,10 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Icon */}
-          <div className="flex md:hidden items-center space-x-3">
-            <a 
-              href="tel:+917799383334" 
-              className="p-2 bg-secondary/30 border border-gray-500/20 text-accent rounded-md"
-              title="Call Us"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
+          <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 border border-gray-500/20 text-gray-200 hover:text-white rounded-md"
+              className="p-2 border border-primary/10 text-primary hover:text-accent rounded-md"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -147,8 +140,8 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer (Slides Down) */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-primary-dark/95 border-t border-primary-light backdrop-blur-lg shadow-2xl transition-all duration-300 overflow-hidden ${
-        mobileMenuOpen ? 'max-h-[500px] opacity-100 py-6 border-b' : 'max-h-0 opacity-0'
+      <div className={`md:hidden absolute top-full left-0 w-full bg-white border-t border-b border-gray-100 shadow-2xl transition-all duration-300 overflow-hidden ${
+        mobileMenuOpen ? 'max-h-[500px] opacity-100 py-6' : 'max-h-0 opacity-0'
       }`}>
         <div className="px-4 space-y-4">
           <nav className="flex flex-col space-y-3">
@@ -158,8 +151,8 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-base font-semibold tracking-wide py-2 border-b border-primary-light/50 ${
-                    isActive ? 'text-accent' : 'text-gray-200'
+                  className={`text-base font-semibold tracking-wide py-2 border-b border-gray-100/80 ${
+                    isActive ? 'text-accent' : 'text-slateText'
                   }`}
                 >
                   {link.name}
@@ -180,7 +173,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={logout}
-                  className="flex items-center justify-center w-full px-4 py-3 border border-red-500/30 bg-red-500/10 text-white font-semibold text-center uppercase tracking-wider rounded-md text-sm"
+                  className="flex items-center justify-center w-full px-4 py-3 border border-red-500/30 bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white font-semibold text-center uppercase tracking-wider rounded-md text-sm"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
                   Sign Out
