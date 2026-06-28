@@ -58,11 +58,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Company Name */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center shrink-0">
             <img 
               src={logoImg} 
               alt="RK TRINITY LIFTS Logo" 
-              className="h-24 md:h-32 w-auto object-contain my-[-20px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
+              className="h-14 sm:h-24 md:h-32 max-w-[130px] sm:max-w-[220px] md:max-w-none w-auto object-contain my-[-10px] sm:my-[-20px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
             />
           </Link>
 

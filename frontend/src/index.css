@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 @layer base {
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
   body {
-    @apply bg-slateBg text-slateText font-sans antialiased overflow-x-hidden;
+    @apply bg-slateBg text-slateText font-sans antialiased;
     scroll-behavior: smooth;
   }
 
