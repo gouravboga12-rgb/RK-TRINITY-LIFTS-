@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { 
-  ArrowRight, ShieldCheck, Cpu, Clock, Award, 
-  Settings, CheckCircle, Phone, Mail, MapPin, 
-  ChevronLeft, ChevronRight, Star, Shield, Eye, Flame, Target 
+import {
+  ArrowRight, ShieldCheck, Cpu, Clock, Award,
+  Settings, CheckCircle, Phone, Mail, MapPin,
+  ChevronLeft, ChevronRight, Star, Shield, Eye, Flame, Target
 } from 'lucide-react';
 import InquiryForm from '../components/InquiryForm';
 import passengerLiftImg from '../assets/passenger_lift.png';
@@ -70,7 +70,7 @@ export default function Home() {
 
   const stats = [
     { number: "15+", label: "Years Experience" },
-    { number: "1200+", label: "Lifts Installed" },
+    { number: "500+", label: "Lifts Installed" },
     { number: "450+", label: "AMC Subscriptions" },
     { number: "24/7", label: "Emergency Support" }
   ];
@@ -145,15 +145,14 @@ export default function Home() {
 
   return (
     <div className="relative">
-      
+
       {/* 1. HERO SLIDER SECTION */}
       <section className="relative h-screen bg-primary overflow-hidden">
         {slides.map((slide, idx) => (
           <div
             key={idx}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === activeSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === activeSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
           >
             {/* Background Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent z-10"></div>
@@ -384,8 +383,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {productsList.slice(0, 4).map((prod, idx) => (
-              <div 
-                key={prod.id} 
+              <div
+                key={prod.id}
                 className="bg-white rounded-lg p-6 border border-gray-200/80 shadow-premium flex flex-col sm:flex-row gap-6 font-sans"
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
@@ -419,8 +418,8 @@ export default function Home() {
                       <div>Speed: <span className="text-gray-500 font-sans">{prod.specifications.speed}</span></div>
                     </div>
                   </div>
-                  <Link 
-                    to={`/products/${prod.slug}`} 
+                  <Link
+                    to={`/products/${prod.slug}`}
                     className="inline-flex items-center text-xs font-bold text-secondary hover:text-accent transition-colors"
                   >
                     View Specifications Sheet
@@ -432,7 +431,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link 
+            <Link
               to="/products"
               className="inline-flex items-center px-6 py-3 border border-secondary text-secondary hover:bg-secondary hover:text-white font-bold text-sm tracking-wider uppercase rounded-md transition-all duration-300"
             >
@@ -447,7 +446,7 @@ export default function Home() {
       <section className="py-20 bg-slateBg relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-            
+
             <div className="lg:col-span-1 space-y-4" data-aos="fade-right">
               <span className="text-xs text-secondary font-bold uppercase tracking-widest block">
                 Quality Standards
@@ -461,7 +460,7 @@ export default function Home() {
             </div>
 
             <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              
+
               <div className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up">
                 <div className="inline-flex items-center justify-center w-10 h-10 bg-secondary/10 text-secondary rounded-md mb-4">
                   <ShieldCheck className="w-5 h-5" />
@@ -556,7 +555,7 @@ export default function Home() {
                 Explore Our Modern Installations
               </h2>
             </div>
-            <Link 
+            <Link
               to="/gallery"
               className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-secondary hover:text-accent transition-colors mt-4 md:mt-0"
             >
@@ -616,8 +615,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((test, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className="bg-white p-6 sm:p-8 rounded-lg shadow-premium border border-gray-100 flex flex-col justify-between"
                 data-aos="fade-up"
                 data-aos-delay={idx * 150}
@@ -656,7 +655,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Info Column */}
             <div className="lg:col-span-5 space-y-8" data-aos="fade-right">
               <div className="space-y-3">
@@ -717,14 +716,14 @@ export default function Home() {
 
       {/* 9. GOOGLE MAPS BLOCK */}
       <section className="h-[400px] w-full bg-gray-200 relative" data-aos="zoom-in">
-        <iframe 
+        <iframe
           title="RK TRINITY LIFTS Location Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.666324677761!2d79.39958742514193!3d13.61633510521639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4f4ffd42289f81%3A0xc3cf338805f6e520!2sM.R.Palli%2C%20Tirupati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1719572620241!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0 }} 
-          allowFullScreen="" 
-          loading="lazy" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.666324677761!2d79.39958742514193!3d13.61633510521639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4f4ffd42289f81%3A0xc3cf338805f6e520!2sM.R.Palli%2C%20Tirupati%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1719572620241!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="absolute inset-0 w-full h-full"
         ></iframe>
