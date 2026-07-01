@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, ArrowRight, LayoutDashboard, LogOut, Wrench, Shield } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, LayoutDashboard, LogOut, Wrench, Shield, LogIn } from 'lucide-react';
 import { AuthContext } from '../contexts/AuthContext';
 import logoImg from '../assets/logo.png';
 
@@ -57,7 +57,7 @@ export default function Navbar() {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Row: Info (Left), Centered Logo (Center), Portal (Right) */}
-        <div className={`relative flex items-center justify-between transition-all duration-300 ${
+        <div className={`flex items-center justify-between transition-all duration-300 ${
           scrolled ? 'py-1.5 md:py-2' : 'py-3 md:py-4'
         }`}>
           {/* Left Column: Phone Info (Desktop Only) */}
@@ -71,13 +71,13 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Center Column: Big Company Logo (Centered on both desktop and mobile) */}
-          <div className="flex justify-center items-center w-full md:w-1/2">
+          {/* Center Column: Big Company Logo (Centered on both desktop and mobile, with padding constraint on mobile) */}
+          <div className="flex justify-center items-center flex-grow md:flex-initial md:w-1/2 px-2 md:px-0">
             <Link to="/" className="flex items-center shrink-0">
               <img 
                 src={logoImg} 
                 alt="RK TRINITY LIFTS Logo" 
-                className={`transition-all duration-300 hover:scale-105 object-contain max-w-[280px] sm:max-w-[320px] md:max-w-none w-auto ${
+                className={`transition-all duration-300 hover:scale-105 object-contain max-w-[240px] sm:max-w-[280px] md:max-w-none w-auto ${
                   scrolled
                     ? 'h-10 sm:h-12 md:h-14' 
                     : 'h-14 sm:h-18 md:h-20'
@@ -99,10 +99,11 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={logout}
-                  className="p-2 border border-red-500/30 hover:border-red-500 bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white rounded-md transition-colors duration-300"
-                  title="Sign Out"
+                  className="flex items-center px-4 py-2 border border-red-500/30 hover:border-red-500 bg-red-500/10 hover:bg-red-500 text-red-600 hover:text-white font-semibold text-xs tracking-wider uppercase rounded-md transition-colors duration-300"
+                  title="Log Out"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Log Out
                 </button>
               </div>
             ) : (
@@ -110,14 +111,14 @@ export default function Navbar() {
                 to="/signin"
                 className="flex items-center px-5 py-2.5 bg-accent hover:bg-accent-dark text-primary font-bold text-xs tracking-wider uppercase rounded-md shadow-md transition-all duration-300 hover:scale-[1.02]"
               >
-                Client Portal
-                <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                <LogIn className="w-4 h-4 mr-2" />
+                Sign In / Sign Up
               </Link>
             )}
           </div>
 
           {/* Mobile Menu Icon (Mobile Only) */}
-          <div className="flex md:hidden items-center absolute right-0 top-1/2 -translate-y-1/2">
+          <div className="flex md:hidden items-center justify-end w-10 shrink-0">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 border border-primary/10 text-primary hover:text-accent rounded-md"
@@ -192,7 +193,7 @@ export default function Navbar() {
                   className="flex items-center justify-center w-full px-4 py-3 border border-red-500/30 bg-red-500/10 text-red-600 hover:bg-red-500 hover:text-white font-semibold text-center uppercase tracking-wider rounded-md text-sm"
                 >
                   <LogOut className="w-4 h-4 mr-2" />
-                  Sign Out
+                  Log Out
                 </button>
               </div>
             ) : (
@@ -200,8 +201,8 @@ export default function Navbar() {
                 to="/signin"
                 className="flex items-center justify-center w-full px-4 py-3 bg-accent text-primary font-bold text-center uppercase tracking-wider rounded-md text-sm"
               >
-                Client Portal Login
-                <ArrowRight className="w-4 h-4 ml-2" />
+                <LogIn className="w-4 h-4 mr-2" />
+                Sign In / Sign Up
               </Link>
             )}
           </div>
