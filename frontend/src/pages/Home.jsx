@@ -12,6 +12,7 @@ import passengerLiftImg from '../assets/passenger_lift.png';
 import homeLiftImg from '../assets/home_lift.png';
 import goodsLiftImg from '../assets/goods_lift.png';
 import capsuleLiftImg from '../assets/capsule_lift.png';
+import atriumElevatorsImg from '../assets/atrium_elevators.png';
 import escalatorImg from '../assets/escalator.png';
 import liftAssemblyImg from '../assets/lift_assembly.png';
 import { productsList } from '../constants/productsData';
@@ -40,7 +41,7 @@ export default function Home() {
       title: "Luxury Home Elevators & Capsule Lifts",
       subtitle: "Bespoke Aesthetics & Architecture",
       description: "Exquisite glass capsule lifts and gearless residential elevators designed to blend seamlessly with your home interior while demanding minimal pit space.",
-      image: capsuleLiftImg,
+      image: atriumElevatorsImg,
       ctaText: "View Home Lifts",
       ctaLink: "/products/home-lifts"
     },
@@ -233,8 +234,8 @@ export default function Home() {
             <div className="relative" data-aos="fade-right">
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/15 rounded-lg -z-10"></div>
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
-                alt="Corporate Architecture elevator shaft"
+                src={atriumElevatorsImg}
+                alt="Glowing capsule elevators ascending in a grand hotel atrium"
                 className="rounded-lg shadow-xl w-full object-cover h-[450px]"
               />
               <div className="absolute bottom-4 right-4 bg-primary text-white p-5 rounded-md shadow-lg border border-primary-light max-w-xs">

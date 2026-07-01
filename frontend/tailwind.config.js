@@ -13,14 +13,14 @@ export default {
           dark: "#020617"
         },
         secondary: {
-          DEFAULT: "#1E3A8A", // Royal Blue
-          light: "#2563EB",
-          dark: "#172554"
+          DEFAULT: "#00aeef", // New Logo Sky Blue
+          light: "#40c5f4",
+          dark: "#008bbf"
         },
         accent: {
-          DEFAULT: "#F59E0B", // Amber Gold
-          dark: "#D97706", // Dark Accent Gold
-          light: "#FBBF24"
+          DEFAULT: "#f58320", // New Logo Orange
+          light: "#f8a760",
+          dark: "#c46410"
         },
         slateBg: "#F8FAFC", // Cool white background
         slateText: "#334155" // Muted dark text

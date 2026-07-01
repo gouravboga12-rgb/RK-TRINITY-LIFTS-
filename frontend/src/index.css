@@ -7,7 +7,7 @@
 @layer base {
   html, body {
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   body {
     @apply bg-slateBg text-slateText font-sans antialiased;
@@ -73,7 +73,7 @@
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(45deg, #F59E0B, #1E3A8A, #F59E0B);
+  background: linear-gradient(45deg, #f58320, #00aeef, #f58320);
   z-index: -1;
   filter: blur(8px);
   opacity: 0;

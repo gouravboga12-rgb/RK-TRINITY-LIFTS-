@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Shield, Eye, Flame, Target, Compass, HardHat, Award } from 'lucide-react';
 import passengerLiftImg from '../assets/passenger_lift.png';
+import atriumElevatorsImg from '../assets/atrium_elevators.png';
 
 export default function About() {
   useEffect(() => {
@@ -74,8 +75,8 @@ export default function About() {
 
             <div className="lg:col-span-5" data-aos="fade-left">
               <img
-                src={passengerLiftImg}
-                alt="Modern premium steel passenger elevator"
+                src={atriumElevatorsImg}
+                alt="Glowing capsule elevators ascending in a grand hotel atrium"
                 className="rounded-lg shadow-lg w-full object-cover h-[350px]"
               />
             </div>

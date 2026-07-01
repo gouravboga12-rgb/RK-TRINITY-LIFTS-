@@ -50,55 +50,44 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`sticky top-0 w-full z-50 transition-all duration-300 border-b border-gray-100 ${
+    <header className={`sticky top-0 w-full z-50 transition-all duration-300 border-b border-gray-100/80 ${
       scrolled 
-        ? 'bg-white/95 shadow-md backdrop-blur-md py-3' 
-        : 'bg-white shadow-sm py-4'
+        ? 'bg-white/95 shadow-md backdrop-blur-md' 
+        : 'bg-white shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          {/* Logo & Company Name */}
-          <Link to="/" className="flex items-center shrink-0">
-            <img 
-              src={logoImg} 
-              alt="RK TRINITY LIFTS Logo" 
-              className="h-28 sm:h-28 md:h-32 max-w-[240px] sm:max-w-[240px] md:max-w-none w-auto object-contain my-[-22px] sm:my-[-22px] md:my-[-30px] transition-transform duration-300 hover:scale-105" 
-            />
-          </Link>
-
-          {/* Desktop Navigation Link Items */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => {
-              const isActive = location.pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`font-medium transition-colors text-sm uppercase tracking-wider relative py-1 ${
-                    isActive 
-                      ? 'text-accent' 
-                      : 'text-slateText hover:text-accent'
-                  }`}
-                >
-                  {link.name}
-                  {isActive && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full"></span>
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Right Side CTA & Portals */}
-          <div className="hidden md:flex items-center space-x-4">
+        {/* Top Row: Info (Left), Centered Logo (Center), Portal (Right) */}
+        <div className={`relative flex items-center justify-between transition-all duration-300 ${
+          scrolled ? 'py-1.5 md:py-2' : 'py-3 md:py-4'
+        }`}>
+          {/* Left Column: Phone Info (Desktop Only) */}
+          <div className="hidden md:flex items-center w-1/4 justify-start">
             <a 
               href="tel:+917799383334" 
               className="flex items-center text-sm font-semibold text-slateText hover:text-accent transition-colors"
             >
-              <Phone className="w-4 h-4 mr-1.5 text-accent" />
-              +91 77993 83334
+              <Phone className="w-4 h-4 mr-2 text-accent" />
+              <span className="tracking-wide">+91 77993 83334</span>
             </a>
-            
+          </div>
+
+          {/* Center Column: Big Company Logo (Centered on both desktop and mobile) */}
+          <div className="flex justify-center items-center w-full md:w-1/2">
+            <Link to="/" className="flex items-center shrink-0">
+              <img 
+                src={logoImg} 
+                alt="RK TRINITY LIFTS Logo" 
+                className={`transition-all duration-300 hover:scale-105 object-contain max-w-[280px] sm:max-w-[320px] md:max-w-none w-auto ${
+                  scrolled
+                    ? 'h-10 sm:h-12 md:h-14' 
+                    : 'h-14 sm:h-18 md:h-20'
+                }`}
+              />
+            </Link>
+          </div>
+
+          {/* Right Column: Portal/Dashboard Actions (Desktop Only) */}
+          <div className="hidden md:flex items-center w-1/4 justify-end">
             {user ? (
               <div className="flex items-center space-x-3">
                 <Link
@@ -127,8 +116,8 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Mobile Menu Icon */}
-          <div className="flex md:hidden items-center">
+          {/* Mobile Menu Icon (Mobile Only) */}
+          <div className="flex md:hidden items-center absolute right-0 top-1/2 -translate-y-1/2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 border border-primary/10 text-primary hover:text-accent rounded-md"
@@ -136,6 +125,33 @@ export default function Navbar() {
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+        </div>
+
+        {/* Bottom Row: Centered Navigation links (Desktop Only) */}
+        <div className={`hidden md:block border-t border-gray-100 transition-all duration-300 ${
+          scrolled ? 'py-2' : 'py-3.5'
+        }`}>
+          <nav className="flex items-center justify-center space-x-10">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`font-semibold transition-colors text-xs uppercase tracking-wider relative py-1 ${
+                    isActive 
+                      ? 'text-accent' 
+                      : 'text-slateText hover:text-accent'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full"></span>
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
         </div>
       </div>
 
